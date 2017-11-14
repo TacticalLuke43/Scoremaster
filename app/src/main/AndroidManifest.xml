@@ -16,6 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainMenu" />
+        <activity android:name=".ScoringScreen" />
+        <activity android:name=".PostGameScreen" />
+        <activity android:name=".GroupsScreen" />
+        <activity android:name=".LogInScreen" />
+        <activity android:name=".CreateAccountActivity" />
+        <activity android:name=".GroupManagementScreen" />
+        <activity android:name=".StatsMenu" />
+        <activity android:name=".PlayerStatsScreen" />
+        <activity android:name=".GroupStatsScreen" />
+        <activity android:name=".GameHistoryScreen"></activity>
     </application>
 
 </manifest>
