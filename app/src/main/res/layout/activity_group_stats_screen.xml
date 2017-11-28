@@ -1,9 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pooltable"
     tools:context="csc483.scoremaster.GroupStatsScreen">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/groupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView9"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_toEndOf="@+id/textView9"
+        android:text="@string/GroupStats_groupname"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/groupStatScrollView"
+        android:layout_alignStart="@+id/groupStatScrollView"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="234dp"
+        android:text="Group Name:"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        tools:ignore="HardcodedText" />
+
+    <ScrollView
+        android:layout_width="583dp"
+        android:layout_height="240dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@android:drawable/alert_light_frame"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="69dp"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideInset"
+        android:id="@+id/groupStatScrollView">
+
+        <TableLayout
+            android:id="@+id/groupStatTable"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="true"
+            android:padding="10dp"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:id="@+id/headerTableRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/colorButtonNormal"
+                    android:backgroundTintMode="screen"
+                    android:text="Player Name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic"
+                    tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Average Innings"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic"
+                    tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/colorButtonNormal"
+                    android:text="Matches Won"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic"
+                    tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Matches Played"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic"
+                    tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/colorButtonNormal"
+                    android:text="Match Winrate"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic"
+                    tools:ignore="HardcodedText"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/alert_light_frame"
+                    android:text="Taylor"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/alert_light_frame"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/alert_light_frame"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/alert_light_frame"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:drawable/alert_light_frame"
+                    android:text="0%"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
