@@ -1,9 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="horizontal"
     android:layout_height="match_parent"
+    android:background="@drawable/pooltable_empty"
     tools:context="csc483.scoremaster.ScoringScreen">
 
-</android.support.constraint.ConstraintLayout>
+    <RadioGroup
+        android:id="@+id/radioWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/player1SO8"
+        android:layout_marginStart="440dp">
+
+        <RadioButton
+            android:id="@+id/radioPlayer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Win" />
+
+        <RadioButton
+            android:id="@+id/radioPlayer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Win" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/player1NameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="14dp"
+        android:text="Player 1" />
+
+    <TextView
+        android:id="@+id/player2NameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/player1NameText"
+        android:layout_below="@+id/player1NameText"
+        android:layout_marginTop="13dp"
+        android:text="Player 2" />
+
+    <CheckBox
+        android:id="@+id/player18OB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/player1NameText"
+        android:layout_alignBottom="@+id/player1NameText"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/player1NameText"
+        android:text="8OB" />
+
+    <CheckBox
+        android:id="@+id/player28OB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/player18OB"
+        android:layout_below="@+id/player18OB"
+        android:text="8OB" />
+
+    <CheckBox
+        android:id="@+id/player18BR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/player1NameText"
+        android:layout_alignBottom="@+id/player1NameText"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/player18OB"
+        android:text="8BR" />
+
+    <CheckBox
+        android:id="@+id/player28BR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/player18BR"
+        android:layout_below="@+id/player18BR"
+        android:text="8BR" />
+
+    <CheckBox
+        android:id="@+id/player18OT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/player18BR"
+        android:layout_alignBottom="@+id/player18BR"
+        android:layout_toEndOf="@+id/player18BR"
+        android:layout_marginStart="20dp"
+        android:text="8OT" />
+
+    <CheckBox
+        android:id="@+id/player28OT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player18BR"
+        android:layout_toStartOf="@+id/player1SO8"
+        android:text="8OT" />
+
+    <CheckBox
+        android:id="@+id/player1SO8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/player18OT"
+        android:layout_alignBottom="@+id/player18OT"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/player18OT"
+        android:text="SO8" />
+
+    <CheckBox
+        android:id="@+id/player2SO8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/player1SO8"
+        android:layout_below="@+id/player1SO8"
+        android:text="SO8" />
+
+    <Button
+        android:id="@+id/minusInningsButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="19dp"
+        android:layout_marginStart="17dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_toEndOf="@+id/minusInningsButton"
+        android:text="1"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/plusInningsButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/textView8"
+        android:layout_toEndOf="@+id/textView8"
+        android:text="+" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/minusInningsButton"
+        android:layout_toStartOf="@+id/player18OB"
+        android:text="Innings" />
+
+    <Button
+        android:id="@+id/nextGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/plusInningsButton"
+        android:layout_marginEnd="16dp"
+        android:text="Next Game" />
+
+    <Button
+        android:id="@+id/finishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/nextGameButton"
+        android:layout_marginEnd="18dp"
+        android:layout_toStartOf="@+id/nextGameButton"
+        android:text="Finish" />
+
+    <TextView
+        android:id="@+id/player1ScoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/plusInningsButton"
+        android:layout_toEndOf="@+id/player28OB"
+        android:text="Player 1" />
+
+    <TextView
+        android:id="@+id/player2ScoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/player1ScoreText"
+        android:layout_below="@+id/player1ScoreText"
+        android:text="Player 2" />
+
+    <TextView
+        android:id="@+id/player1Wins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/player1ScoreText"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/player2Wins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player1ScoreText"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/player2ScoreText"
+        android:text="0" />
+</RelativeLayout>
