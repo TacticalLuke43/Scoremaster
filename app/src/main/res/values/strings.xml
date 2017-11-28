@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Scoremaster</string>
+    <string name="PlayerStats_Break">Null</string>
+    <string name="PlayerStats_Run">Null</string>
+    <string name="PlayerStats_Outofturn">Null</string>
+    <string name="PlayerStats_Scratch">Null</string>
+    <string name="PlayerStats_Wins">Null</string>
+    <string name="PlayerStats_Played">Null</string>
+    <string name="PlayerStats_WinPercent">Null</string>
+    <string name="PlayerStats_Innings">Null</string>
+    <string name="GroupStats_groupname">Null</string>
+
+
 </resources>
