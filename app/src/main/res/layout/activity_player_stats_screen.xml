@@ -1,9 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pooltablerotated"
     tools:context="csc483.scoremaster.PlayerStatsScreen">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_below="@+id/textView7"
+        android:layout_marginTop="30dp"
+        android:text="Average # of Innings:"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="89dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="29dp"
+        android:text="Win Percentage:"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="89dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="32dp"
+        android:text="Matches Played:"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="89dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="30dp"
+        android:text="Match Wins:"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="89dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="33dp"
+        android:text="Scratch-On-8:"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="89dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="33dp"
+        android:text="8-Out-of-Turn:"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="89dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="32dp"
+        android:text="8-Ball-And-Run:"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="89dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="76dp"
+        android:text="8-On-Break:"
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="89dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/OnBreak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView"
+        android:layout_marginEnd="63dp"
+        android:text="Null"
+        android:textColor="@android:color/holo_blue_bright"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/BallAndRun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignStart="@+id/OnBreak"
+        android:text="Null"
+        android:textColor="@android:color/holo_blue_bright"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/OutOfTurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignStart="@+id/BallAndRun"
+        android:text="Null"
+        android:textColor="@android:color/holo_blue_bright"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/ScratchOn8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/OutOfTurn"
+        android:layout_alignTop="@+id/textView4"
+        android:text="Null"
+        android:textColor="@android:color/holo_blue_bright"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/MatchWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ScratchOn8"
+        android:layout_alignTop="@+id/textView5"
+        android:text="Null"
+        android:textColor="@android:color/holo_blue_bright"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/MatchPlayed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/MatchWins"
+        android:layout_alignTop="@+id/textView6"
+        android:text="Null"
+        android:textColor="@android:color/holo_blue_bright"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/WinPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/MatchPlayed"
+        android:layout_alignTop="@+id/textView7"
+        android:text="Null"
+        android:textColor="@android:color/holo_blue_bright"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/AvgInnings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/WinPercent"
+        android:layout_alignTop="@+id/textView8"
+        android:text="Null"
+        android:textColor="@android:color/holo_blue_bright"
+        tools:ignore="HardcodedText" />
+</RelativeLayout>
