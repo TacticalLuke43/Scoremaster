@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "599010153740",
+    "firebase_url": "https://scoremaster-a38a5.firebaseio.com",
+    "project_id": "scoremaster-a38a5",
+    "storage_bucket": "scoremaster-a38a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599010153740:android:3f9fb6e8bd65b99b",
+        "android_client_info": {
+          "package_name": "csc483.scoremaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599010153740-g7kqv5alnpmt3pilah0d4kibn4ue5765.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "csc483.scoremaster",
+            "certificate_hash": "0252122ff1f92f8f1afd526a5ebd2926e8d295c9"
+          }
+        },
+        {
+          "client_id": "599010153740-gkgf6djl8uq7og918ibup47deq7b7vpm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "csc483.scoremaster",
+            "certificate_hash": "788db268cfa9d2dc9a7725711a3339a42c13f5f9"
+          }
+        },
+        {
+          "client_id": "599010153740-5r3f77ri87ver01h7iqgqgmnllrqn3um.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfCx53smSdlF7-w-8AbSphCwDgbfFuW0g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599010153740-5r3f77ri87ver01h7iqgqgmnllrqn3um.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
