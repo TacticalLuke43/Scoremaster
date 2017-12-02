@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Group {
 	/** Constructor without group name **/
-	public Group (Player admin) {
+	public Group (csc483.scoremaster.Player admin) {
 		this(admin, "Untitled");
 	}
 	
 	/** Constructor with group name **/
-	public Group (Player admin, String groupName) {
-		this.id = /* Firebase stuff */ ;
-		setName(groupName);
+	public Group (csc483.scoremaster.Player admin, String groupName) {
+		this.id = "test";/* Firebase stuff */ ;
+		//setName(groupName);
 		this.admins.add(admin);
 	}
 
@@ -20,20 +20,20 @@ public class Group {
 	private String name;
 //	private List<Integer> playerIDs = new ArrayList<Integer>();
 	private GroupStats stats = new GroupStats();
-	private ArrayList<EightBallMatch> matches = new ArrayList<EightBallMatch>();
-	private ArrayList<Player> admins = new ArrayList<Player>(); // more than one admin?
+	private ArrayList<csc483.scoremaster.EightBallMatch> matches = new ArrayList<csc483.scoremaster.EightBallMatch>();
+	private ArrayList<csc483.scoremaster.Player> admins = new ArrayList<csc483.scoremaster.Player>(); // more than one admin?
 
-	public ArrayList<Player> getPlayers() {
-		return this.stats.getPlayers();
-	}
+	/*public ArrayList<csc483.scoremaster.Player> getPlayers() {
+		//return this.stats.getPlayers();
+	}*/
 
-	public void addPlayer(Player p) {
+	/*public void addPlayer(csc483.scoremaster.Player p) {
 		p.addToGroup(this);
 		stats.addPlayer(p);
-	}
+	}*/
 	
-	/** @returns true if playerID was in list. **/	
-	public boolean removePlayer(Player p) {
+	/** @returns true if playerID was in list. *
+	public boolean removePlayer(csc483.scoremaster.Player p) {
 		p.removeFromGroup(this);
 		return stats.removePlayer(p);
 	}
@@ -71,5 +71,5 @@ public class Group {
 
 	public List<EightBallMatch> getMatches() {
 		return this.matches;
-	}
+	}*/
 }
