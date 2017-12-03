@@ -8,21 +8,23 @@ import android.widget.TextView;
 
 public class PlayerStatsScreen extends AppCompatActivity {
 
-    //Text View Stuff
-    TextView Break = (TextView)findViewById(R.id.OnBreak);
-    TextView Run = (TextView)findViewById(R.id.BallAndRun);
-    TextView Outofturn = (TextView)findViewById(R.id.OutOfTurn);
-    TextView Scratch = (TextView)findViewById(R.id.ScratchOn8);
-    TextView Wins = (TextView)findViewById(R.id.MatchWins);
-    TextView Played = (TextView)findViewById(R.id.MatchPlayed);
-    TextView WinPercent = (TextView)findViewById(R.id.WinPercent);
-    TextView Innings = (TextView)findViewById(R.id.AvgInnings);
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_stats_screen);
+
+        //Text View Stuff
+        TextView Break = (TextView)findViewById(R.id.OnBreak);
+        TextView Run = (TextView)findViewById(R.id.BallAndRun);
+        TextView Outofturn = (TextView)findViewById(R.id.OutOfTurn);
+        TextView Scratch = (TextView)findViewById(R.id.ScratchOn8);
+        TextView Wins = (TextView)findViewById(R.id.MatchWins);
+        TextView Played = (TextView)findViewById(R.id.MatchPlayed);
+        TextView WinPercent = (TextView)findViewById(R.id.WinPercent);
+        TextView Innings = (TextView)findViewById(R.id.AvgInnings);
 
         //Getting stats info and placing into strings
         //commented out until database works

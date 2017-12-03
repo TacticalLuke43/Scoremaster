@@ -4,17 +4,19 @@ package csc483.scoremaster;
  * Created by T on 11/26/2017.
  */
 
-//brain hurts, going to need to ask about this, i really need to know how our firebase is going to be set up
-    //for now its just a copy paste of the playerstats
 
 public class GroupStats {
     //variables
     //left out the game related ones, i dont think we need them?
     //I also left out winrate and avginnings as variables because they can just be calculated on the spot
-    int matchesPlayed;
-    int matchesWon;
-    int points;
-    int innings;
+    private int matchesPlayed;
+    private int matchesWon;
+    private int points;
+    private int innings;
+    private int breaks;
+    private int runs;
+    private int outOfTurns;
+    private int scratchOn8s;
 
 
     //gets
@@ -27,6 +29,18 @@ public class GroupStats {
     public int getPoints() {
         return points;
     }
+    public int getBreaks() {
+        return breaks;
+    }
+    public int getRuns() {
+        return runs;
+    }
+    public int getOutOfTurns() {
+        return outOfTurns;
+    }
+    public int getScratchOn8s() {
+        return scratchOn8s;
+    }
     //sets
 
     // for these first one it just increments them by one, since you can only play 1 match at a time
@@ -38,7 +52,18 @@ public class GroupStats {
         this.matchesWon = this.matchesWon + won;
     }
     //current value + passed value
-
+    private void setBreaks(int breaks) {
+        this.breaks = this.breaks + breaks;
+    }
+    private void setRuns(int runs) {
+        this.runs = this.runs + runs;
+    }
+    private void setOutOfTurns(int outOfTurns) {
+        this.outOfTurns = this.outOfTurns + outOfTurns;
+    }
+    private void setScratchOn8s(int scratchOn8s) {
+        this.scratchOn8s = this.scratchOn8s + scratchOn8s;
+    }
     private void setInnings(int innings) {
         this.innings = this.innings + innings;
     }
@@ -65,6 +90,10 @@ public class GroupStats {
     public void recalcStats(int won, int breaks, int runs, int outOfTurns, int scratchOn8s, int innings, int points){
         setMatchesPlayed();
         setMatchesWon(won);
+        setBreaks(breaks);
+        setRuns(runs);
+        setOutOfTurns(outOfTurns);
+        setScratchOn8s(scratchOn8s);
         setInnings(innings);
         setPoints(points);
     }
