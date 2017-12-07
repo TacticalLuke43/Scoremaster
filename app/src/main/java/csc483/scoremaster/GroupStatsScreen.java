@@ -19,7 +19,6 @@ import android.widget.TextView;
 public class GroupStatsScreen extends AppCompatActivity {
 
 
-    TableLayout groupTable = (TableLayout)findViewById(R.id.groupStatTable);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +29,7 @@ public class GroupStatsScreen extends AppCompatActivity {
         // replace placeholder 2 with getnumplayers() to get the number of players in the group
         int numberOfPlayers = 2;
 
+        TableLayout groupTable = (TableLayout)findViewById(R.id.groupStatTable);
         //loops through the players and dynamically creates new table rows for them
         //will likely need to change this depending on how we are storing data/what the group class looks like
         for (int i=0; i<numberOfPlayers; i++)
