@@ -8,14 +8,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LogInScreen extends AppCompatActivity{
+public class LogInScreen extends AppCompatActivity {
 
-    private EditText txtEmail;
-    private EditText txtPass;
+
+    private EditText emailText;
+    private EditText passWordText;
 
     private Button btnLogin;
     private Button btnCreate;
@@ -25,6 +30,7 @@ public class LogInScreen extends AppCompatActivity{
     //firebase
 
     private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +39,10 @@ public class LogInScreen extends AppCompatActivity{
 
         mAuth = FirebaseAuth.getInstance();
 
-        Button createaccountbtn = (Button)findViewById(R.id.btnCreate);
-        Button loginbtn = (Button)findViewById(R.id.btnLogin);
+        Button btnCreate = (Button) findViewById(R.id.btnCreate);
+        Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
-        createaccountbtn.setOnClickListener(new View.OnClickListener() {
+        btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LogInScreen.this, CreateAccountActivity.class));
@@ -44,37 +50,53 @@ public class LogInScreen extends AppCompatActivity{
         });
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth){
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     //User is signed in
                     startActivity(new Intent(LogInScreen.this, MainMenu.class));
-                }else{
+                } else {
                     //User is signed out
                 }
             }
         };
-        loginbtn.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                EditText email = (EditText) findViewById(R.id.emailText);
-                EditText password = (EditText) findViewById(R.id.passwordText);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                EditText emailText = (EditText) findViewById(R.id.emailText);
+                EditText passWordText = (EditText) findViewById(R.id.passWordText);
+
+                if (emailText.getText().toString().equals("") && !passWordText.getText().toString().equals("")) {
+                    mAuth.signInWithEmailAndPassword(emailText.getText().toString(), passWordText.getText().toString())
+                            .addOnCompleteListener(LogInScreen.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    //If sign in fails, display a message to the user.  If sign in succeeds
+                                    //the auth state listener will be notified and logic to handle the
+                                    //signed in user can be handled in the listener.
+                                    if (!task.isSuccessful()) {
+                                        Toast.makeText(LogInScreen.this, "Authentication failed!", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(LogInScreen.this, "Loging in!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(LogInScreen.this, MainMenu.class));
+                                    }
+                                }
+                            });
+
+                } else {
+                    Toast.makeText(LogInScreen.this, "Username or password is blank!", Toast.LENGTH_SHORT).show();
+                }
             }
-        }
+        });
     }
 
 
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
+        //Check if User is signed in
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        //   updateUI(currentUser);
     }
-
-    private void updateUI(FirebaseUser currentUser) {
-    }
-
-
 }
+
+
