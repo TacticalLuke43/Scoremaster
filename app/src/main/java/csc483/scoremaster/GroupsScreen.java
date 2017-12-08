@@ -29,17 +29,41 @@ public class GroupsScreen extends AppCompatActivity {
             }
         });
 
+		
+		TableLayout playersTableLayout = (TableLayout)findViewById(playerTable);
+		
+		init(playerTableLayout);
         addItemsOnSpinner();
         //addListenerOnButton();
         //addListenerOnSpinnerItemSelection();
     }
 
+	public void init(TableLayout playerTableLayout)
+	{
+			int numberOfPlayers = 2; //change this to retrieve array size from group
+			TableRow playerRow = new TableRow(this);
+			gameRow.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+			
+			CheckedTextView playername = new TextView(this);
+            playername.setLayoutParams(new TableRow.LayoutParams(dpToPx(120), dpToPx(50)));
+            playername.setText("Thing");//change to getPlayerName() when class is done
+            playername.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            playername.setBackgroundResource(android.R.drawable.alert_light_frame);
+            playername.setTextAppearance(this,R.style.TextAppearance_AppCompat_Body1);
+            playername.setTextColor(Color.BLACK);
+            playername.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+			
+			playerRow.addView(playername);
+			gamesTableLayout.addView(playerRow);
+	}
+	
+	
     // add items into spinner dynamically
     public void addItemsOnSpinner() {
 
         spinner = (Spinner) findViewById(R.id.groupsSpinner);
         List<String> list = new ArrayList<String>();
-        list.add("list 1");
+        list.add("list 1"); //change these to retrieve users groups
         list.add("list 2");
         list.add("list 3");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
