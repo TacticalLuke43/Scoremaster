@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Objects;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class CreateGroup extends AppCompatActivity {
 
@@ -25,7 +26,14 @@ public class CreateGroup extends AppCompatActivity {
                 //if groupName is not taken
                 if (!Objects.equals(groupName, "something"))//needs to be getGroupList()
                 {
-                    //create a group with user added
+                    //randomly generate group code
+                    RandomGen gen = new RandomGen(8, ThreadLocalRandom.current());
+                    //gen = group code
+                    //create group
+
+                    //add player to group
+
+                    // give player admin/edit permissions
 
                     finish();
                 }
