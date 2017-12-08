@@ -33,6 +33,7 @@
         <activity
             android:name=".ViewGame"
             android:theme="@style/AppTheme.PopUpThing" />
+        <activity android:name=".CreateGroup"></activity>
     </application>
 
 </manifest>

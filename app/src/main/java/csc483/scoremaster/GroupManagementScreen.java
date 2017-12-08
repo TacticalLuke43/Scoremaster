@@ -25,12 +25,19 @@ public class GroupManagementScreen extends AppCompatActivity {
 
 
 
-        //Taylors intent to start joingroup popup
+        //Taylors intent to start joingroup popup and createGroup
         Button joinGroup = (Button)findViewById(R.id.joinGroupButton);
         joinGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(GroupManagementScreen.this, JoinGroup.class));
+            }
+        });
+        Button createGroup = (Button)findViewById(R.id.createGroupButton);
+        createGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(GroupManagementScreen.this, CreateGroup.class));
             }
         });
 
