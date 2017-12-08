@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenu" />
+        <activity android:name=".MainMenu2" />
         <activity android:name=".ScoringScreen" />
         <activity android:name=".PostGameScreen" />
         <activity android:name=".GroupsScreen" />

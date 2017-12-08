@@ -57,7 +57,7 @@ public class StartingSplash extends AppCompatActivity implements GestureDetector
 
     @Override
     public boolean onSingleTapUp(MotionEvent event) {
-        startActivity(new Intent(StartingSplash.this, MainMenu.class));
+        startActivity(new Intent(StartingSplash.this, MainMenu2.class));
         return true;
     }
     /*

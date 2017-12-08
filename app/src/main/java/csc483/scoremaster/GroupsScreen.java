@@ -1,12 +1,17 @@
 package csc483.scoremaster;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,23 +20,23 @@ public class GroupsScreen extends AppCompatActivity {
 
     private Spinner spinner;
 
-	ArrayList<Players> playerList;
+	//ArrayList<Players> playerList;
 	
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groups_screen);
-		TableLayout playersTableLayout = (TableLayout)findViewById(playerTable);
+		//final TableLayout playerTableLayout = (TableLayout)findViewById(playerTable);
 		
-		init(playerTableLayout);
+		//init(playerTableLayout);
         addItemsOnSpinner();
         Button startGameButton = (Button)findViewById(R.id.startGameButton);
         startGameButton.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
-				ArrayList<Players> finalPlayers;
+				/*ArrayList<Players> finalPlayers;
                 //iterate through players and count checks
 				for(int i = 0; i <  playerTableLayout.getChildCount() ; i++)
 				{
@@ -53,7 +58,10 @@ public class GroupsScreen extends AppCompatActivity {
 				else
 				{
 					//toast error
-				}
+				}*/
+				Intent scoringScreen = new Intent(GroupsScreen.this, ScoringScreen.class);
+                //scoringScreen.putExtra("Players", finalPlayers);
+                startActivity(scoringScreen);
             }
         });
 
@@ -66,10 +74,10 @@ public class GroupsScreen extends AppCompatActivity {
 	{
 			int numberOfPlayers = 2; //change this to retrieve array size from group
 			TableRow playerRow = new TableRow(this);
-			gameRow.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+			playerRow.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
 			
-			CheckedTextView playername = new TextView(this);
-            playername.setLayoutParams(new TableRow.LayoutParams(dpToPx(120), dpToPx(50)));
+			CheckedTextView playername = new CheckedTextView(this);
+            //playername.setLayoutParams(new TableRow.LayoutParams(dpToPx(120), dpToPx(50)));
             playername.setText("Thing");//change to getPlayerName() when class is done
             playername.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             playername.setBackgroundResource(android.R.drawable.alert_light_frame);
@@ -78,7 +86,7 @@ public class GroupsScreen extends AppCompatActivity {
             playername.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 			
 			playerRow.addView(playername);
-			gamesTableLayout.addView(playerRow);
+			playerTableLayout.addView(playerRow);
 	}
 	
 	
