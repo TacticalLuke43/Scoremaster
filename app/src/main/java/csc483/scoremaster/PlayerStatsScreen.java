@@ -25,10 +25,11 @@ public class PlayerStatsScreen extends AppCompatActivity {
         TextView Played = (TextView)findViewById(R.id.MatchPlayed);
         TextView WinPercent = (TextView)findViewById(R.id.WinPercent);
         TextView Innings = (TextView)findViewById(R.id.AvgInnings);
+
         //Getting stats info and placing into strings
         //commented out until database works
-        //R.string.PlayerStats_Break = String.valueOf(getBreaks());
-        //R.string.PlayerStats_Run = String.valueOf(getRuns());
+        //R.string.PlayerStats_Break = String.valueOf(getEightOnBreaks());
+        //R.string.PlayerStats_Run = String.valueOf(getEightBreakRuns());
         //R.string.PlayerStats_Outofturn = String.valueOf(getOutofturn());
         //R.string.PlayerStats_Scratch = String.valueOf(getScratchOn8());
         //R.string.PlayerStats_Wins = String.valueOf(getMatchesWon());
