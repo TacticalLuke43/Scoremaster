@@ -26,7 +26,13 @@
         <activity android:name=".StatsMenu" />
         <activity android:name=".PlayerStatsScreen" />
         <activity android:name=".GroupStatsScreen" />
-        <activity android:name=".GameHistoryScreen"></activity>
+        <activity android:name=".GameHistoryScreen" />
+        <activity
+            android:name=".JoinGroup"
+            android:theme="@style/AppTheme.PopUpThing" />
+        <activity
+            android:name=".ViewGame"
+            android:theme="@style/AppTheme.PopUpThing" />
     </application>
 
 </manifest>
