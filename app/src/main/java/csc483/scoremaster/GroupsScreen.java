@@ -15,25 +15,49 @@ public class GroupsScreen extends AppCompatActivity {
 
     private Spinner spinner;
 
+	ArrayList<Players> playerList;
+	
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groups_screen);
-
+		TableLayout playersTableLayout = (TableLayout)findViewById(playerTable);
+		
+		init(playerTableLayout);
+        addItemsOnSpinner();
         Button startGameButton = (Button)findViewById(R.id.startGameButton);
         startGameButton.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
-                startActivity(new Intent(GroupsScreen.this, ScoringScreen.class));
+				ArrayList<Players> finalPlayers;
+                //iterate through players and count checks
+				for(int i = 0; i <  playerTableLayout.getChildCount() ; i++)
+				{
+					if()//player is checked
+					{
+						playersNeeded++;
+						//save the player to playerList;
+					}
+				}
+						
+				if(playersNeeded == 2)
+				{
+					finalPlayers.push(playerList[0]);
+					finalPlayers.push(playerList[1]);
+					Intent scoringScreen = new Intent(this, ScoringScreen.class);
+					scoringScreen.putExtra("Players", finalPlayers);
+					startActivity(scoringScreen);
+				}
+				else
+				{
+					//toast error
+				}
             }
         });
 
 		
-		TableLayout playersTableLayout = (TableLayout)findViewById(playerTable);
-		
-		init(playerTableLayout);
-        addItemsOnSpinner();
         //addListenerOnButton();
         //addListenerOnSpinnerItemSelection();
     }
