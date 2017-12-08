@@ -6,6 +6,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Objects;
 
@@ -47,6 +48,8 @@ public class JoinGroup extends AppCompatActivity {
                 else
                 {
                     // display some sort of error message to retype correct group code
+                    Toast.makeText(JoinGroup.this,
+                            "Group code is not correct, please try again", Toast.LENGTH_LONG).show();
                 }
 
 
