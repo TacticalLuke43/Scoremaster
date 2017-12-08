@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,52 +8,72 @@
     tools:context="csc483.scoremaster.CreateAccountActivity">
 
     <EditText
-        android:id="@+id/enterPassword"
-        android:layout_width="271dp"
-        android:layout_height="32dp"
+        android:id="@+id/passWordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/repeatPassword"
+        android:layout_alignStart="@+id/repeatPassword"
+        android:layout_marginBottom="18dp"
         android:ems="10"
+        android:hint="Enter Password"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="270dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="338dp"/>
 
     <EditText
-        android:id="@+id/username"
-        android:layout_width="275dp"
-        android:layout_height="39dp"
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/repeatPassword"
+        android:layout_marginTop="74dp"
         android:ems="10"
+        android:hint="User name"
         android:inputType="textPersonName"
         android:singleLine="false"
-        android:text="Username"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.2" />
 
     <EditText
-        android:id="@+id/repeatPassword"
-        android:layout_width="272dp"
-        android:layout_height="32dp"
+        android:id="@+id/emailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/userName"
+        android:layout_below="@+id/userName"
         android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="169dp" />
+
+    <EditText
+        android:id="@+id/repeatPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/CreateAccountButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:hint="Repeat Password"
         android:inputType="textPassword"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterPassword" />
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="338dp"/>
 
     <Button
         android:id="@+id/CreateAccountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp"
         android:text="Create Account"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="384dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repeatPassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/repeatPassword"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="384dp" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

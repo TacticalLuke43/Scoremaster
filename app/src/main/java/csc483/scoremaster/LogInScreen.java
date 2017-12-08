@@ -65,7 +65,7 @@ public class LogInScreen extends AppCompatActivity {
                 EditText emailText = (EditText) findViewById(R.id.emailText);
                 EditText passWordText = (EditText) findViewById(R.id.passWordText);
 
-                if (emailText.getText().toString().equals("") && !passWordText.getText().toString().equals("")) {
+                if (!emailText.getText().toString().equals("") && !passWordText.getText().toString().equals("")) {
                     mAuth.signInWithEmailAndPassword(emailText.getText().toString(), passWordText.getText().toString())
                             .addOnCompleteListener(LogInScreen.this, new OnCompleteListener<AuthResult>() {
                                 @Override

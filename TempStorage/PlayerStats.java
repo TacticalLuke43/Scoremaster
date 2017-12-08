@@ -6,39 +6,45 @@ package csc483.scoremaster;
 //basic structure for the class, i have no idea how firebase works so this may very well get changed
 
 public class PlayerStats {
+    // constructor
+    public PlayerStats (Player player) {
+        // TODO ??
+    }
+
+
     //variables
     //left out the game related ones, i dont think we need them?
     //I also left out winrate and avginnings as variables because they can just be calculated on the spot
     private int matchesPlayed;
     private int matchesWon;
-    private int points;
+    private int wins;
     private int innings;
-    private int breaks;
-    private int runs;
-    private int outOfTurns;
-    private int scratchOn8s;
+    private int EightOnBreaks;
+    private int EightBreakRuns;
+    private int EightOutOfTurns;
+    private int scratchOnEights;
 
     //gets
     public int getMatchesPlayed() {
         return matchesPlayed;
     }
-    public int getMatchesWons() {
+    public int getMatchesWon() {
         return matchesWon;
     }
-    public int getBreaks() {
-        return breaks;
+    public int getEightOnBreaks() {
+        return EightOnBreaks;
     }
-    public int getRuns() {
-        return runs;
+    public int getEightBreakRuns() {
+        return EightBreakRuns;
     }
-    public int getOutOfTurns() {
-        return outOfTurns;
+    public int getEightOutOfTurns() {
+        return EightOutOfTurns;
     }
-    public int getScratchOn8s() {
-        return scratchOn8s;
+    public int getScratchOnEights() {
+        return scratchOnEights;
     }
-    public int getPoints() {
-        return points;
+    public int getWins() {
+        return wins;
     }
     //sets
 
@@ -51,23 +57,23 @@ public class PlayerStats {
         this.matchesWon = this.matchesWon + won;
     }
     //current value + passed value
-    private void setBreaks(int breaks) {
-        this.breaks = this.breaks + breaks;
+    private void setEightOnBreaks(int eightOnBreaks) {
+        this.EightOnBreaks = this.EightOnBreaks + eightOnBreaks;
     }
-    private void setRuns(int runs) {
-        this.runs = this.runs + runs;
+    private void setEightBreakRuns(int eightBreakRuns) {
+        this.EightBreakRuns++;
     }
-    private void setOutOfTurns(int outOfTurns) {
-        this.outOfTurns = this.outOfTurns + outOfTurns;
+    private void setEightOutOfTurns(int eightOutOfTurns) {
+        this.EightOutOfTurns++;
     }
-    private void setScratchOn8s(int scratchOn8s) {
-        this.scratchOn8s = this.scratchOn8s + scratchOn8s;
+    private void setScratchOnEights(int scratchOnEights) {
+        this.scratchOnEights++;
     }
     private void setInnings(int innings) {
-        this.innings = this.innings + innings;
+        this.innings++;
     }
-    private void setPoints(int points) {
-        this.points = this.points + points;
+    private void setWins(int wins) {
+        this.wins++;
     }
 
     //calculations
@@ -89,14 +95,11 @@ public class PlayerStats {
     public void recalcStats(int won, int breaks, int runs, int outOfTurns, int scratchOn8s, int innings, int points){
         setMatchesPlayed();
         setMatchesWon(won);
-        setBreaks(breaks);
-        setRuns(runs);
-        setOutOfTurns(outOfTurns);
-        setScratchOn8s(scratchOn8s);
+        setEightOnBreaks(breaks);
+        setEightBreakRuns(runs);
+        setEightOutOfTurns(outOfTurns);
+        setScratchOnEights(scratchOn8s);
         setInnings(innings);
-        setPoints(points);
+        setWins(points);
     }
-
-
-
 }
