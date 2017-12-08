@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context="csc483.scoremaster.JoinGroup">
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView28"
+        android:layout_centerHorizontal="true"
+        android:text="Enter the group code down below:"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:text="To Join a Group"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/groupCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:ems="10"
+        android:foregroundTint="@color/common_google_signin_btn_text_dark_disabled"
+        android:hint="Group Code"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textView29"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="29dp"
+        android:text="Submit"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/submitButton"
+        android:layout_alignBottom="@+id/submitButton"
+        android:layout_alignEnd="@+id/textView29"
+        android:layout_marginEnd="21dp"
+        android:text="Cancel"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
+</RelativeLayout>

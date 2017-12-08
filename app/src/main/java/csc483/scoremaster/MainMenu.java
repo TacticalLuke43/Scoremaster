@@ -30,7 +30,7 @@ public class MainMenu extends AppCompatActivity {
         {
             public void onClick(View v)
             {
-                //startActivity(new Intent(MainMenu.this, ScoringScreen.class));
+                startActivity(new Intent(MainMenu.this, ViewGame.class));
             }
         });
         groupManButton.setOnClickListener(new View.OnClickListener()

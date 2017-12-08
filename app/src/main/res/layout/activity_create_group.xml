@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pooltable"
+    tools:context="csc483.scoremaster.CreateGroup">
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="117dp"
+        android:text="Create"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/groupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/createButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="111dp"
+        android:ems="10"
+        android:hint="Group Name"
+        android:inputType="textPersonName"
+        tools:ignore="HardcodedText" />
+</RelativeLayout>
