@@ -22,7 +22,7 @@ public class Player {
         return name;
     }
 
-    public String setName(String newName) { // might want to share a name validator method with Group.
+    public void setName(String newName) { // might want to share a name validator method with Group.
         this.name = newName;
     }
 

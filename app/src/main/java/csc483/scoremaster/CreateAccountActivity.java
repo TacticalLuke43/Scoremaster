@@ -68,7 +68,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                             } else {
                                 DatabaseReference firebaseDatabase = FirebaseDatabase.getInstance().getReference();
                                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                startActivity(new Intent(CreateAccountActivity.this, LogInScreen.class));
+                                startActivity(new Intent(CreateAccountActivity.this, MainMenu.class));
                             }
                         }
                     });
