@@ -11,15 +11,16 @@ public class Group {
 	
 	/** Constructor with group name **/
 	public Group (Player admin, String groupName) {
-		this.id = /* Firebase stuff */ ;
+		this.id = "placeholder"/* Firebase stuff TODO */ ;
 		setName(groupName);
 		this.admins.add(admin);
+		stats = new GroupStats(this);
 	}
 
 	private String id;
 	private String name;
 //	private List<Integer> playerIDs = new ArrayList<Integer>();
-	private GroupStats stats = new GroupStats();
+	private GroupStats stats;
 	private ArrayList<EightBallMatch> matches = new ArrayList<EightBallMatch>();
 	private ArrayList<Player> admins = new ArrayList<Player>(); // more than one admin?
 
@@ -38,15 +39,16 @@ public class Group {
 		return stats.removePlayer(p);
 	}
 
+	/*
 	public void editAdmin(Player newAdmin) {
-		// admins.clear(); TODO do we want to allow multiple admins?
+		// admins.clear(); TODO do we want to allow multiple admins? ed.: Not anymore! Creator is admin forever
 		admins.add(newAdmin);
-	}
+	} */
 
 	public String startMatch(ArrayList<Player> players) { // pass in which players are playing this match
 		EightBallMatch match = new EightBallMatch(this, players);
 		this.matches.add(match);
-		return match.getID(); // might come in handy.
+		return match.getId(); // might come in handy.
 	}
 
 	public void setName(String name) {

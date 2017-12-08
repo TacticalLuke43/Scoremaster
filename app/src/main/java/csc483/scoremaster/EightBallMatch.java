@@ -19,7 +19,6 @@ public class EightBallMatch extends Match {
 	
 	/** player 1 is index 0, player 2 is index 1; don't blame me, blame array indexing. */
 	private int[] gamesWon        = {0,0},
-				  points          = {0,0},
 				  EightBreakRuns  = {0,0},
 				  EightOnBreaks   = {0,0},
 				  EightOutOfTurns = {0,0},
