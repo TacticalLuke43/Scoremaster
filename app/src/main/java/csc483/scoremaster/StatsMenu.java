@@ -20,25 +20,8 @@ public class StatsMenu extends AppCompatActivity {
             }
         });
 
-
-        Button personalHistory = (Button) findViewById(R.id.personalHistory);
-        personalHistory.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                startActivity(new Intent(StatsMenu.this, GameHistoryScreen.class));
-            }
-        });
-
-
         Button groupStats = (Button) findViewById(R.id.groupStats);
         groupStats.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                startActivity(new Intent(StatsMenu.this, GroupStatsScreen.class));
-            }
-        });
-
-
-        Button groupGameHistory = (Button) findViewById(R.id.groupGameHistory);
-        groupGameHistory.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 startActivity(new Intent(StatsMenu.this, GroupStatsScreen.class));
             }

@@ -25,20 +25,28 @@
         android:layout_marginTop="54dp"/>
 
     <Button
-        android:id="@+id/setPlayerButton"
+        android:id="@+id/updatePlayerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/scrollView2"
         android:layout_marginBottom="62dp"
-        android:text="Set Player...?" />
+        android:text="Update Players" />
+
+    <Button
+        android:id="@+id/updateGroupsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_below="@+id/groupsSpinner"
+        android:text="Update Groups" />
 
     <Button
         android:id="@+id/startGameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/setPlayerButton"
-        android:layout_alignBottom="@+id/setPlayerButton"
+        android:layout_alignBaseline="@+id/updatePlayerButton"
+        android:layout_alignBottom="@+id/updatePlayerButton"
         android:layout_alignEnd="@+id/scrollView2"
         android:text="Start Game" />
 
@@ -52,16 +60,42 @@
         android:text="Player List: (Select 2 Players)" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="260dp"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:layout_below="@+id/textView6"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/scrollView2">
+        android:layout_centerHorizontal="true">
 
-        <LinearLayout
+        <TableLayout
+            android:id="@+id/playerTable"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
+
     </ScrollView>
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/updateGroupsButton"
+        android:layout_alignStart="@+id/startGameButton"
+        android:text="CheckBox" />
 
 </RelativeLayout>

@@ -11,26 +11,17 @@
         android:id="@+id/personalStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/groupGameHistory"
-        android:layout_marginTop="100dp"
-        android:text="Personal Statistics" />
-
-    <Button
-        android:id="@+id/personalHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/personalStats"
-        android:layout_marginTop="30dp"
+        android:layout_above="@+id/spinner"
         android:layout_centerHorizontal="true"
-        android:text="Personal Game History" />
+        android:layout_marginBottom="93dp"
+        android:text="Personal Statistics" />
 
     <TextView
         android:id="@+id/groupTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/groupGameHistory"
-        android:layout_centerVertical="true"
+        android:layout_alignBottom="@+id/spinner"
+        android:layout_toStartOf="@+id/spinner"
         android:text="Group:" />
 
     <Spinner
@@ -44,17 +35,9 @@
         android:id="@+id/groupStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/personalHistory"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginBottom="106dp"
         android:text="Group Statistics" />
 
-    <Button
-        android:id="@+id/groupGameHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/groupStats"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Group Game History" />
 </RelativeLayout>
