@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,6 +14,12 @@ import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +28,50 @@ public class GroupsScreen extends AppCompatActivity {
     private Spinner spinner;
 
 	//ArrayList<Players> playerList;
-	
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
+
+
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groups_screen);
 		//final TableLayout playerTableLayout = (TableLayout)findViewById(playerTable);
-		
+
+        /*
+        *       FIREBASE EXAMPLE STUFFFFFFF
+        *       Check out the database on the firebase console to see exactly what this code did
+        */
+        //FOR WRITING
+        //nestle .child("childname") as many times as you need to go deeper
+        myRef.child("tests").child("testEntry").setValue("dog"); //writes "dog" to a child
+        int snake = 1;
+        myRef.child("tests").child("otherTest").setValue(snake); //writes your variable to that child
+
+        //FOR READING
+        //Set myRef to whatever level youre after using
+        myRef = database.getReference().child("tests");
+        myRef.child("testEntry").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class); //set this class to the type of variable youre expecting
+                myRef.child("new value").setValue(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+            }
+        });
+
+
+        //end of firebase example stuff
+
+
+
 		//init(playerTableLayout);
         addItemsOnSpinner();
         Button startGameButton = (Button)findViewById(R.id.startGameButton);
@@ -49,8 +92,8 @@ public class GroupsScreen extends AppCompatActivity {
 						
 				if(playersNeeded == 2)
 				{
-					finalPlayers.push(playerList[0]);
-					finalPlayers.push(playerList[1]);
+					finalPlayers.add(playerList[0]);
+					finalPlayers.add(playerList[1]);
 					Intent scoringScreen = new Intent(this, ScoringScreen.class);
 					scoringScreen.putExtra("Players", finalPlayers);
 					startActivity(scoringScreen);
