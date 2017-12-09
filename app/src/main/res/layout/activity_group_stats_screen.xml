@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pooltable"
+    android:background="@drawable/pooltable_empty"
     tools:context="csc483.scoremaster.GroupStatsScreen">
 
     <TextView
@@ -33,7 +33,7 @@
 
     <ScrollView
         android:id="@+id/groupStatScrollView"
-        android:layout_width="583dp"
+        android:layout_width="550dp"
         android:layout_height="280dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
