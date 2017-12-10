@@ -29,9 +29,9 @@ public class GroupStatsScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_stats_screen);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        TableLayout groupTable = (TableLayout)findViewById(R.id.groupStatTable);
+        //TableLayout groupTable = (TableLayout)findViewById(R.id.groupStatTable);
 
-        init(groupTable);
+        //init(groupTable);
 
     }
     public static int dpToPx(int dp)
