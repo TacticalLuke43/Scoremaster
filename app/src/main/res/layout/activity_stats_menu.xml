@@ -11,7 +11,7 @@
         android:id="@+id/personalStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/spinner"
+        android:layout_above="@+id/groupsSpinner"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="93dp"
         android:text="Personal Statistics" />
@@ -20,16 +20,17 @@
         android:id="@+id/groupTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/spinner"
-        android:layout_toStartOf="@+id/spinner"
+        android:layout_below="@+id/personalStats"
+        android:layout_toStartOf="@+id/groupStats"
         android:text="Group:" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="125dp"
+        android:id="@+id/groupsSpinner"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/personalStats"
-        android:layout_centerVertical="true" />
+        android:layout_above="@+id/groupStats"
+        android:layout_marginBottom="107dp"
+        android:layout_toEndOf="@+id/groupTextView" />
 
     <Button
         android:id="@+id/groupStats"
