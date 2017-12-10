@@ -1,6 +1,7 @@
 package csc483.scoremaster;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -67,6 +68,21 @@ public class GameInProgressScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_in_progress_screen);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        //retrieve the room code
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                roomCode= null;
+            } else {
+                roomCode= extras.getString("GiveRoomCode");
+            }
+        } else {
+            roomCode= (String) savedInstanceState.getSerializable("GiveRoomCode");
+        }
+
+
+
 
         textView27 = (TextView)findViewById(R.id.textView27);
         textView38 = (TextView)findViewById(R.id.textView38);
