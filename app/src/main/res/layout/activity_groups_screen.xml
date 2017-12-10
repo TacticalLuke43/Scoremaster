@@ -17,12 +17,11 @@
 
     <Spinner
         android:id="@+id/groupsSpinner"
-        android:layout_width="180dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/scrollView2"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="31dp"
-        android:layout_marginTop="54dp"/>
+        android:layout_marginTop="54dp" />
 
     <Button
         android:id="@+id/updatePlayerButton"
@@ -32,14 +31,6 @@
         android:layout_alignStart="@+id/scrollView2"
         android:layout_marginBottom="62dp"
         android:text="Update Players" />
-
-    <Button
-        android:id="@+id/updateGroupsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_below="@+id/groupsSpinner"
-        android:text="Update Groups" />
 
     <Button
         android:id="@+id/startGameButton"
@@ -89,13 +80,5 @@
         </TableLayout>
 
     </ScrollView>
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/updateGroupsButton"
-        android:layout_alignStart="@+id/startGameButton"
-        android:text="CheckBox" />
 
 </RelativeLayout>
