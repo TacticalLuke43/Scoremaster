@@ -97,6 +97,12 @@ public class LogInScreen extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         //   updateUI(currentUser);
     }
-}
+
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+}}
 
 
