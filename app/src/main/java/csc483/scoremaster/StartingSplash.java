@@ -1,12 +1,14 @@
 package csc483.scoremaster;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 public class StartingSplash extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
@@ -16,6 +18,7 @@ public class StartingSplash extends AppCompatActivity implements GestureDetector
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starting_splash);
         detector = new GestureDetectorCompat(this, this);
+
     }
 
     @Override
@@ -57,7 +60,7 @@ public class StartingSplash extends AppCompatActivity implements GestureDetector
 
     @Override
     public boolean onSingleTapUp(MotionEvent event) {
-        startActivity(new Intent(StartingSplash.this, MainMenu.class));
+        startActivity(new Intent(StartingSplash.this, MainMenu2.class));
         return true;
     }
     /*
