@@ -1,5 +1,6 @@
 package csc483.scoremaster;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -39,18 +40,20 @@ public class ViewGame extends AppCompatActivity {
                 String gameCode = ((EditText)findViewById(R.id.gameCode)).getText().toString();
 
                 //if groupCode is a correct code
-                if (Objects.equals(gameCode, "something"))
-                {
-                    //needs code to add user to group based on the code accepted
+                //if (Objects.equals(gameCode, "something"))
+                ///{
+                    Intent i = new Intent(ViewGame.this, GameInProgressScreen.class);
+                    i.putExtra("GiveRoomCode",gameCode);
+                    startActivity(i);
 
                     finish();
-                }
-                else
-                {
+                //}
+                //else
+                //{
                     // display some sort of error message to retype correct group code
-                    Toast.makeText(ViewGame.this,
-                            "Incorrect Game code, please try again", Toast.LENGTH_LONG).show();
-                }
+                    //Toast.makeText(ViewGame.this,
+                            //"Incorrect Game code, please try again", Toast.LENGTH_LONG).show();
+                //}
 
 
             }
