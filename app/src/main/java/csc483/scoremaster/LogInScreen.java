@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,12 +43,13 @@ public class LogInScreen extends AppCompatActivity {
         Button btnCreate = (Button) findViewById(R.id.btnCreate);
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
-        btnCreate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnCreate.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v) {
                 startActivity(new Intent(LogInScreen.this, CreateAccountActivity.class));
             }
-        });
+            });
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -57,11 +59,15 @@ public class LogInScreen extends AppCompatActivity {
                     startActivity(new Intent(LogInScreen.this, MainMenu.class));
                 } else {
                     //User is signed out
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(LogInScreen.this, LogInScreen.class));
                 }
             }
         };
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        btnLogin.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
                 EditText emailText = (EditText) findViewById(R.id.emailText);
                 EditText passWordText = (EditText) findViewById(R.id.passWordText);
 
