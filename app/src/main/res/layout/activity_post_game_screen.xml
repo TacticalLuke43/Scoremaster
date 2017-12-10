@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,57 +11,46 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="End of Match"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="51dp" />
+        android:layout_below="@+id/DoneButton"
+        android:layout_marginStart="25dp"
+        android:layout_toEndOf="@+id/textView13"
+        android:text="End of Match" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Winner:"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="129dp" />
+        android:text="Winner:" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Loser:"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="182dp" />
+        android:text="Loser:" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="129dp" />
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="182dp" />
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="8OB"
-        tools:layout_editor_absoluteX="201dp"
-        tools:layout_editor_absoluteY="89dp" />
+        android:text="8OB" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="8BR"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="89dp" />
+        android:text="8BR"/>
 
     <TextView
         android:id="@+id/textView9"
@@ -99,6 +88,9 @@
         android:id="@+id/DoneButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="146dp"
+        android:layout_toEndOf="@+id/textView2"
         android:text="Done"
         tools:layout_editor_absoluteX="419dp"
         tools:layout_editor_absoluteY="218dp" />
@@ -215,4 +207,4 @@
         tools:layout_editor_absoluteX="448dp"
         tools:layout_editor_absoluteY="182dp" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

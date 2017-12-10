@@ -9,117 +9,7 @@
     android:background="@drawable/pooltable_empty"
     tools:context="csc483.scoremaster.ScoringScreen">
 
-    <RadioGroup
-        android:id="@+id/radioWins"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/player1SO8"
-        android:layout_marginStart="440dp">
 
-        <RadioButton
-            android:id="@+id/radioPlayer1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Win" />
-
-        <RadioButton
-            android:id="@+id/radioPlayer2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Win" />
-
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/player1NameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="14dp"
-        android:text="Player 1" />
-
-    <TextView
-        android:id="@+id/player2NameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/player1NameText"
-        android:layout_below="@+id/player1NameText"
-        android:layout_marginTop="13dp"
-        android:text="Player 2" />
-
-    <CheckBox
-        android:id="@+id/player18OB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/player1NameText"
-        android:layout_alignBottom="@+id/player1NameText"
-        android:layout_marginStart="20dp"
-        android:layout_toEndOf="@+id/player1NameText"
-        android:text="8OB" />
-
-    <CheckBox
-        android:id="@+id/player28OB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/player18OB"
-        android:layout_below="@+id/player18OB"
-        android:text="8OB" />
-
-    <CheckBox
-        android:id="@+id/player18BR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/player1NameText"
-        android:layout_alignBottom="@+id/player1NameText"
-        android:layout_marginStart="20dp"
-        android:layout_toEndOf="@+id/player18OB"
-        android:text="8BR" />
-
-    <CheckBox
-        android:id="@+id/player28BR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/player18BR"
-        android:layout_below="@+id/player18BR"
-        android:text="8BR" />
-
-    <CheckBox
-        android:id="@+id/player18OT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/player18BR"
-        android:layout_alignBottom="@+id/player18BR"
-        android:layout_toEndOf="@+id/player18BR"
-        android:layout_marginStart="20dp"
-        android:text="8OT" />
-
-    <CheckBox
-        android:id="@+id/player28OT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/player18BR"
-        android:layout_toStartOf="@+id/player1SO8"
-        android:text="8OT" />
-
-    <CheckBox
-        android:id="@+id/player1SO8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/player18OT"
-        android:layout_alignBottom="@+id/player18OT"
-        android:layout_marginStart="20dp"
-        android:layout_toEndOf="@+id/player18OT"
-        android:text="SO8" />
-
-    <CheckBox
-        android:id="@+id/player2SO8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/player1SO8"
-        android:layout_below="@+id/player1SO8"
-        android:text="SO8" />
 
     <Button
         android:id="@+id/minusInningsButton"
@@ -155,7 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/minusInningsButton"
-        android:layout_toStartOf="@+id/player18OB"
+        android:layout_marginEnd="24dp"
+        android:layout_toStartOf="@+id/player1ScoreText"
         android:text="Innings" />
 
     <Button
@@ -180,8 +71,9 @@
         android:id="@+id/player1ScoreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/plusInningsButton"
-        android:layout_toEndOf="@+id/player28OB"
+        android:layout_below="@+id/textView9"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/plusInningsButton"
         android:text="Player 1" />
 
     <TextView
@@ -213,12 +105,355 @@
     <ScrollView
         android:layout_width="550dp"
         android:layout_height="250dp"
-        android:layout_alignStart="@+id/minusInningsButton"
-        android:layout_alignTop="@+id/radioWins">
+        android:layout_alignStart="@+id/minusInningsButton">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
+        <RelativeLayout
+            android:layout_width="550dp"
+            android:layout_height="250dp">
+
+            <RadioGroup
+                android:id="@+id/radioWins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/player1SO8"
+                android:layout_marginStart="440dp">
+
+                <RadioButton
+                    android:id="@+id/radioPlayer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Win" />
+
+                <RadioButton
+                    android:id="@+id/radioPlayer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Win" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/player1NameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="14dp"
+                android:text="Player 1" />
+
+            <TextView
+                android:id="@+id/player2NameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/player1NameText"
+                android:layout_below="@+id/player1NameText"
+                android:layout_marginTop="13dp"
+                android:text="Player 2" />
+
+            <CheckBox
+                android:id="@+id/player18OB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/player1NameText"
+                android:layout_alignBottom="@+id/player1NameText"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/player1NameText"
+                android:text="8OB" />
+
+            <CheckBox
+                android:id="@+id/player28OB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/player18OB"
+                android:layout_below="@+id/player18OB"
+                android:text="8OB" />
+
+            <CheckBox
+                android:id="@+id/player18BR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/player1NameText"
+                android:layout_alignBottom="@+id/player1NameText"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/player18OB"
+                android:text="8BR" />
+
+            <CheckBox
+                android:id="@+id/player28BR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/player18BR"
+                android:layout_below="@+id/player18BR"
+                android:text="8BR" />
+
+            <CheckBox
+                android:id="@+id/player18OT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/player18BR"
+                android:layout_alignBottom="@+id/player18BR"
+                android:layout_toEndOf="@+id/player18BR"
+                android:layout_marginStart="20dp"
+                android:text="8OT" />
+
+            <CheckBox
+                android:id="@+id/player28OT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/player18BR"
+                android:layout_toStartOf="@+id/player1SO8"
+                android:text="8OT" />
+
+            <CheckBox
+                android:id="@+id/player1SO8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/player18OT"
+                android:layout_alignBottom="@+id/player18OT"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/player18OT"
+                android:text="SO8" />
+
+            <CheckBox
+                android:id="@+id/player2SO8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/player1SO8"
+                android:layout_below="@+id/player1SO8"
+                android:text="SO8" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/player2NameText"
+                android:layout_below="@+id/player28OB"
+                android:layout_marginTop="14dp"
+                android:text="Player 1"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textView27"
+                android:layout_centerVertical="true"
+                android:visibility="invisible"
+                android:text="Player 2" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView27"
+                android:layout_alignBottom="@+id/textView27"
+                android:layout_alignStart="@+id/player28OB"
+                android:visibility="invisible"
+                android:text="8OB" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/checkBox3"
+                android:layout_below="@+id/checkBox3"
+                android:visibility="invisible"
+                android:text="8OB" />
+
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/player28BR"
+                android:visibility="invisible"
+                android:layout_alignTop="@+id/checkBox3"
+                android:text="8BR" />
+
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignStart="@+id/checkBox5"
+                android:layout_below="@+id/checkBox5"
+                android:text="8BR" />
+
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/checkBox5"
+                android:layout_alignBottom="@+id/checkBox5"
+                android:visibility="invisible"
+                android:layout_alignStart="@+id/player28OT"
+                android:text="8OT" />
+
+            <CheckBox
+                android:id="@+id/checkBox8"
+                android:layout_width="wrap_content"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/checkBox7"
+                android:layout_below="@+id/checkBox7"
+                android:text="8OT" />
+
+            <CheckBox
+                android:id="@+id/checkBox9"
+                android:layout_width="wrap_content"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/player2SO8"
+                android:layout_alignTop="@+id/checkBox7"
+                android:text="SO8" />
+
+            <CheckBox
+                android:id="@+id/checkBox10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignStart="@+id/checkBox9"
+                android:layout_below="@+id/checkBox9"
+                android:text="SO8" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignStart="@+id/radioWins"
+                android:layout_alignTop="@+id/checkBox9"
+                android:id="@+id/radioGroup2">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Win" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Win" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignStart="@+id/textView38"
+                android:layout_below="@+id/checkBox4"
+                android:layout_marginTop="17dp"
+                android:text="Player 1" />
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignStart="@+id/textView39"
+                android:layout_below="@+id/textView39"
+                android:layout_marginTop="11dp"
+                android:text="Player 2" />
+
+            <CheckBox
+                android:id="@+id/checkBox11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignBaseline="@+id/textView39"
+                android:layout_alignBottom="@+id/textView39"
+                android:layout_alignStart="@+id/checkBox4"
+                android:text="8OB" />
+
+            <CheckBox
+                android:id="@+id/checkBox12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignStart="@+id/checkBox11"
+                android:layout_below="@+id/checkBox11"
+                android:text="8OB" />
+
+            <CheckBox
+                android:id="@+id/checkBox13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignStart="@+id/checkBox6"
+                android:layout_alignTop="@+id/checkBox11"
+                android:text="8BR" />
+
+            <CheckBox
+                android:id="@+id/checkBox14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignBottom="@+id/checkBox12"
+                android:layout_alignStart="@+id/checkBox13"
+                android:text="8BR" />
+
+            <CheckBox
+                android:id="@+id/checkBox15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_above="@+id/checkBox16"
+                android:layout_alignStart="@+id/checkBox8"
+                android:text="8OT" />
+
+            <CheckBox
+                android:id="@+id/checkBox16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignBottom="@+id/checkBox14"
+                android:layout_alignStart="@+id/checkBox15"
+                android:text="8OT" />
+
+            <CheckBox
+                android:id="@+id/checkBox17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_above="@+id/checkBox16"
+                android:layout_alignStart="@+id/checkBox10"
+                android:text="SO8" />
+
+            <CheckBox
+                android:id="@+id/checkBox18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_alignStart="@+id/checkBox17"
+                android:layout_below="@+id/checkBox17"
+                android:text="SO8" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/radioGroup2"
+                android:layout_alignTop="@+id/checkBox17"
+                android:visibility="invisible">
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Win" />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Win" />
+            </RadioGroup>
+
+        </RelativeLayout>
+
     </ScrollView>
 </RelativeLayout>
