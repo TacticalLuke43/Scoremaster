@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class JoinGroup extends AppCompatActivity {
-
-    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("groups");
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public class JoinGroup extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final String groupCode = ((EditText)findViewById(R.id.groupCode)).getText().toString();
+                myRef = database.getInstance().getReference().child("groups");
                 myRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {

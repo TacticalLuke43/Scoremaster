@@ -64,13 +64,36 @@ public class ScoringScreen extends AppCompatActivity {
     CheckBox player28OT;
     CheckBox player1SO8;
     CheckBox player2SO8;
+    int inningsCount;
+    TextView inningsCountView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoring_screen);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        inningsCount = 0;
+        inningsCountView = (TextView)findViewById(R.id.textView8);
+        Button plusBut = (Button)findViewById(R.id.plusInningsButton);
+        Button minusBut = (Button)findViewById(R.id.minusInningsButton);
 
+        plusBut.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+               inningsCount++;
+                inningsCountView.setText(Integer.toString(inningsCount));
+            }
+        });
 
+        minusBut.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                inningsCount--;
+                inningsCountView.setText(Integer.toString(inningsCount));
+            }
+        });
 
         Button finishBut = (Button)findViewById(R.id.finishButton);
         finishBut.setOnClickListener(new View.OnClickListener() {
@@ -91,9 +114,11 @@ public class ScoringScreen extends AppCompatActivity {
                     myRef.child(roomCode).child("game3").child("player28win").setValue(radioButton6.isChecked());
                     myRef.child(roomCode).child("gameCount").setValue(gameCount);
                 }
+                myRef.child(roomCode).child("innings").setValue(inningsCount);
                 startActivity(new Intent(ScoringScreen.this, PostGameScreen.class));
             }
         });
+        myRef.child(roomCode).child("innings").setValue(inningsCount);
         Button nextBut = (Button)findViewById(R.id.nextGameButton);
         matchCodeText = (TextView)findViewById(R.id.matchCodeText);
         textView27 = (TextView)findViewById(R.id.textView27);

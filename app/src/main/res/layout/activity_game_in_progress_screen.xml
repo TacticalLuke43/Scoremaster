@@ -439,7 +439,8 @@
         android:layout_marginTop="25dp"
         android:layout_toStartOf="@+id/player2ScoreText"
         android:text="Match Code: "
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/matchCodeText"
@@ -448,7 +449,8 @@
         android:layout_alignStart="@+id/textView54"
         android:layout_below="@+id/textView54"
         android:text="DDD444"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/refreshButton"

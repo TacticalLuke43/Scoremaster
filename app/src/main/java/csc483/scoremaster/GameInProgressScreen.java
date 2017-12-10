@@ -25,8 +25,8 @@ public class GameInProgressScreen extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-    String roomCode = "temp";
-    int gameCount = 1;
+    String roomCode = "gmVlFn";
+    int gameCount = 3;
     TextView textView27;
     TextView textView38;
     TextView textView39;
@@ -64,12 +64,19 @@ public class GameInProgressScreen extends AppCompatActivity {
     CheckBox player28OT;
     CheckBox player1SO8;
     CheckBox player2SO8;
+    TextView inningsCountView;
+    TextView player1Wins;
+    TextView player2Wins;
+    int inningsCount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_in_progress_screen);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //retrieve the room code
+        inningsCount = 0;
+        inningsCountView = (TextView)findViewById(R.id.textView8);
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
@@ -82,7 +89,8 @@ public class GameInProgressScreen extends AppCompatActivity {
         }
 
 
-
+        myRef = database.getInstance().getReference();
+        myRef.child("testRoom:").setValue(roomCode);
         matchCodeText = (TextView)findViewById(R.id.matchCodeText);
         textView27 = (TextView)findViewById(R.id.textView27);
         textView38 = (TextView)findViewById(R.id.textView38);
@@ -120,8 +128,10 @@ public class GameInProgressScreen extends AppCompatActivity {
         radioButton4 = (RadioButton)findViewById(R.id.radioButton2);
         radioButton5 = (RadioButton)findViewById(R.id.radioButton3);
         radioButton6 = (RadioButton)findViewById(R.id.radioButton4);
+        player1Wins = (TextView)findViewById(R.id.player1Wins);
+        player2Wins = (TextView)findViewById(R.id.player2Wins);
         matchCodeText.setText(roomCode);
-        myRef = database.getInstance().getReference().child("matches").child(roomCode);
+        /*myRef = database.getInstance().getReference().child("matches").child("gmVlFn");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -134,14 +144,14 @@ public class GameInProgressScreen extends AppCompatActivity {
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
             }
-        });
+        });*/
         //refreshItems();
 
         Button refreshBut = (Button)findViewById(R.id.refreshButton);
         refreshBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                refreshItems();
+                refreshItems(roomCode);
             }
         });
         Button finishBut = (Button)findViewById(R.id.finishButton);
@@ -154,7 +164,37 @@ public class GameInProgressScreen extends AppCompatActivity {
     }
 
 
-    public void refreshItems() {
+    public void refreshItems(String roomCode2) {
+        //update innings
+        /*myRef = database.getInstance().getReference().child("matches");
+        myRef.child(roomCode).child("innings").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer value = dataSnapshot.getValue(Integer.class);
+                inningsCountView.setText(Integer.toString(value));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+            }
+        });*/
+        inningsCountView.setText(Integer.toString(5));
+        player1Wins.setText(Integer.toString(1));
+        player2Wins.setText(Integer.toString(2));
+        String roomCode = "gmVlFn";
+        /*myRef.child(roomCode).child("gameCount").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer value = dataSnapshot.getValue(Integer.class);
+                gameCount = value;
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+            }
+        });*/
         if(gameCount >= 1) {
             myRef = database.getInstance().getReference().child("matches").child(roomCode).child("game1");
             myRef.child("player18OB").addValueEventListener(new ValueEventListener() {

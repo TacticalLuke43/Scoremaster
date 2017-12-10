@@ -14,7 +14,8 @@ import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class CreateGroup extends AppCompatActivity {
-    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ public class CreateGroup extends AppCompatActivity {
                 String groupID = gen.nextString();
                 //gen = group code
                 //create group
-                myRef = FirebaseDatabase.getInstance().getReference().child("groups").child(groupID);
+                myRef = database.getInstance().getReference().child("groups").child(groupID);
                 myRef.child("name").setValue(groupName);
                 myRef.child("playerList").child("player1").setValue("AAA111");
                 //add player to group
