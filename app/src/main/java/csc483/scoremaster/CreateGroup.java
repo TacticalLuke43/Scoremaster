@@ -7,11 +7,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class CreateGroup extends AppCompatActivity {
-
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,29 +26,18 @@ public class CreateGroup extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String groupName = ((EditText)findViewById(R.id.groupName)).getText().toString();
-
-                //if groupName is not taken
-                if (!Objects.equals(groupName, "something"))//needs to be getGroupList()
-                {
-                    //randomly generate group code
-                    RandomGen gen = new RandomGen(8, ThreadLocalRandom.current());
-                    //gen = group code
-                    //create group
-
-                    //add player to group
-
-                    // give player admin/edit permissions
-
-                    finish();
-                }
-                else
-                {
-                    //  retry
-                    Toast.makeText(CreateGroup.this,
-                            "Name Already taken or is invalid, try again", Toast.LENGTH_LONG).show();
-                }
-
-
+                //randomly generate group code
+                RandomGen gen = new RandomGen(6, ThreadLocalRandom.current());
+                String groupID = gen.nextString();
+                //gen = group code
+                //create group
+                myRef = database.getInstance().getReference().child("groups").child(groupID);
+                myRef.child("name").setValue(groupName);
+                myRef.child("playerList").child("player1").setValue("AAA111");
+                //add player to group
+                myRef = FirebaseDatabase.getInstance().getReference().child("players").child("AAA111");
+                myRef.child("groupList").child("3").setValue(groupID);
+                finish();
             }
         });
     }

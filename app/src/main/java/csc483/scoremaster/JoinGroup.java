@@ -8,9 +8,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class JoinGroup extends AppCompatActivity {
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,23 +46,31 @@ public class JoinGroup extends AppCompatActivity {
         s.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String groupCode = ((EditText)findViewById(R.id.groupCode)).getText().toString();
+                final String groupCode = ((EditText)findViewById(R.id.groupCode)).getText().toString();
+                myRef = database.getInstance().getReference().child("groups");
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.hasChild(groupCode)) {
+                            // run some code
+                            myRef.child(groupCode).child("playerList").child("player3").setValue("AAA111");
+                            myRef = FirebaseDatabase.getInstance().getReference().child("players").child("3");
+                            myRef.setValue(groupCode);
+                            finish();
+                        }
+                        else
+                        {
+                            // display some sort of error message to retype correct group code
+                            Toast.makeText(JoinGroup.this,
+                                    "Group code is not correct, please try again", Toast.LENGTH_LONG).show();
+                        }
+                    }
 
-                //if groupCode is a correct code
-                if (Objects.equals(groupCode, "something"))
-                {
-                    //needs code to add user to group based on the code accepted
-
-                    finish();
-                }
-                else
-                {
-                    // display some sort of error message to retype correct group code
-                    Toast.makeText(JoinGroup.this,
-                            "Group code is not correct, please try again", Toast.LENGTH_LONG).show();
-                }
-
-
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                        // Failed to read value
+                    }
+                });
             }
         });
     }

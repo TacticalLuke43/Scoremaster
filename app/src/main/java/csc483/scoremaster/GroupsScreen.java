@@ -170,10 +170,10 @@ public class GroupsScreen extends AppCompatActivity {
 
 	public void init(TableLayout playerTableLayout)
 	{
-			int numberOfPlayers = 4; //change this to retrieve array size from group
+			int numberOfPlayers = 2; //change this to retrieve array size from group
 
         playerTableLayout.removeAllViews();
-        for (int i=0; i<numberOfPlayers; i++) {
+        /*for (int i=0; i<numberOfPlayers; i++) {
             TableRow playerRow = new TableRow(this);
             playerRow.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
             CheckBox playername = new CheckBox(this);
@@ -186,7 +186,30 @@ public class GroupsScreen extends AppCompatActivity {
 
             playerRow.addView(playername);
             playerTableLayout.addView(playerRow);
-        }
+        }*/
+        TableRow playerRow = new TableRow(this);
+        playerRow.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        CheckBox playername = new CheckBox(this);
+        playername.setLayoutParams(new TableRow.LayoutParams(800, 150));
+        playername.setText("Luke");//change to getPlayerName() when class is done
+        //playername.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        playername.setTextAppearance(this, R.style.TextAppearance_AppCompat_Body1);
+        //playername.setTextColor(Color.BLACK);
+        playername.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+
+        playerRow.addView(playername);
+        playerTableLayout.addView(playerRow);
+
+        TableRow playerRow2 = new TableRow(this);
+        playerRow2.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        CheckBox playername2 = new CheckBox(this);
+        playername2.setLayoutParams(new TableRow.LayoutParams(800, 150));
+        playername2.setText("Kevin");//change to getPlayerName() when class is done
+        playername2.setTextAppearance(this, R.style.TextAppearance_AppCompat_Body1);
+        playername2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+
+        playerRow2.addView(playername2);
+        playerTableLayout.addView(playerRow2);
 	}
 	
 	
