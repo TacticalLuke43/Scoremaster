@@ -10,15 +10,14 @@
     tools:context="csc483.scoremaster.ScoringScreen">
 
 
-
     <Button
         android:id="@+id/minusInningsButton"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="19dp"
-        android:layout_marginStart="17dp"
+        android:layout_marginBottom="29dp"
+        android:layout_marginStart="147dp"
         android:text="-"
         android:textAlignment="center"
         android:textSize="14sp" />
@@ -104,8 +103,7 @@
 
     <ScrollView
         android:layout_width="550dp"
-        android:layout_height="250dp"
-        android:layout_alignStart="@+id/minusInningsButton">
+        android:layout_height="250dp">
 
         <RelativeLayout
             android:layout_width="550dp"
@@ -456,4 +454,23 @@
         </RelativeLayout>
 
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/minusInningsButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="13dp"
+        android:text="Match Code: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/matchCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView54"
+        android:layout_below="@+id/textView54"
+        android:text="DDD444"
+        android:textSize="18sp" />
 </RelativeLayout>
