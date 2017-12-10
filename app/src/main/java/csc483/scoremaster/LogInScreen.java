@@ -82,7 +82,7 @@ public class LogInScreen extends AppCompatActivity {
                                     if (!task.isSuccessful()) {
                                         Toast.makeText(LogInScreen.this, "Authentication failed!", Toast.LENGTH_SHORT).show();
                                     } else {
-                                        Toast.makeText(LogInScreen.this, "Loging in!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LogInScreen.this, "Logging in!", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(LogInScreen.this, MainMenu.class));
                                     }
                                 }
