@@ -124,9 +124,9 @@ public class GroupsScreen extends AppCompatActivity {
             public void onClick(View v)
             {
                 init(playerTableLayout);
-                spinner = (Spinner) findViewById(R.id.groupsSpinner);
-                String selectedGroup = String.valueOf(spinner.getSelectedItem());
-                myRef = database.getInstance().getReference().child("groups");
+                //spinner = (Spinner) findViewById(R.id.groupsSpinner);
+                //String selectedGroup = String.valueOf(spinner.getSelectedItem());
+                /*myRef = database.getInstance().getReference().child("groups");
                 myRef.child("groupList").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -140,7 +140,7 @@ public class GroupsScreen extends AppCompatActivity {
                         // Failed to read value
                         groupList.add("I messed up");
                     }
-                });
+                });*/
             }
         });
         Button startGameButton = (Button)findViewById(R.id.startGameButton);
@@ -187,7 +187,7 @@ public class GroupsScreen extends AppCompatActivity {
 	{
 			int numberOfPlayers = 4; //change this to retrieve array size from group
 
-
+        playerTableLayout.removeAllViews();
         for (int i=0; i<numberOfPlayers; i++) {
             TableRow playerRow = new TableRow(this);
             playerRow.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
