@@ -6,7 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainMenu extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +24,7 @@ public class MainMenu extends AppCompatActivity {
         Button groupPlayButton = (Button)findViewById(R.id.groupPlayButton);
         Button groupManButton = (Button)findViewById(R.id.groupManButton);
         Button statsButton = (Button)findViewById(R.id.statsButton);
-        Button logOutButton = (Button)findViewById(R.id.LogOutbutton);
+        final Button logOutButton = (Button)findViewById(R.id.LogOutbutton);
         quickPlayButton.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
@@ -62,7 +68,13 @@ public class MainMenu extends AppCompatActivity {
         {
             public void onClick(View v)
             {
-                //startActivity(new Intent(MainMenu.this, ScoringScreen.class));
+                logOutButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(MainMenu.this, LogInScreen.class));
+                    }
+                });
             }
         });
     }
