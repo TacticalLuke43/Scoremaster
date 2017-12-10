@@ -29,7 +29,7 @@ public class MainMenu2 extends AppCompatActivity {
         {
             public void onClick(View v)
             {
-                startActivity(new Intent(MainMenu2.this, ScoringScreen.class));
+                startActivity(new Intent(MainMenu2.this, ViewGame.class));
             }
         });
 
