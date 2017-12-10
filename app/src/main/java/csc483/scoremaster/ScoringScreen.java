@@ -89,6 +89,7 @@ public class ScoringScreen extends AppCompatActivity {
                     myRef.child(roomCode).child("game3").child("player2SO8").setValue(checkBox18.isChecked());
                     myRef.child(roomCode).child("game3").child("player18win").setValue(radioButton5.isChecked());
                     myRef.child(roomCode).child("game3").child("player28win").setValue(radioButton6.isChecked());
+                    myRef.child(roomCode).child("gameCount").setValue(gameCount);
                 }
                 startActivity(new Intent(ScoringScreen.this, PostGameScreen.class));
             }
@@ -141,6 +142,7 @@ public class ScoringScreen extends AppCompatActivity {
         myRef.child(roomCode).child("player2").setValue("AAA112");
         myRef.child(roomCode).child("group").setValue("ABC123");
         myRef.child(roomCode).child("innings").setValue(8);
+        myRef.child(roomCode).child("gameCount").setValue(gameCount);
 
 
         nextBut.setOnClickListener(new View.OnClickListener() {
@@ -196,6 +198,7 @@ public class ScoringScreen extends AppCompatActivity {
                     myRef.child(roomCode).child("game2").child("player2SO8").setValue(checkBox10.isChecked());
                     myRef.child(roomCode).child("game2").child("player18win").setValue(radioButton3.isChecked());
                     myRef.child(roomCode).child("game2").child("player28win").setValue(radioButton4.isChecked());
+                    myRef.child(roomCode).child("gameCount").setValue(gameCount);
                     gameCount++;
                 }
             }

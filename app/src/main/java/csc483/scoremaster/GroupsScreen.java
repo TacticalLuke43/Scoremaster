@@ -40,6 +40,7 @@ public class GroupsScreen extends AppCompatActivity {
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser user;
     ArrayList<String> groupList = new ArrayList<String>();
+    ArrayList<String> groupNameList = new ArrayList<String>();
     List<String> list = new ArrayList<String>();
 
 	
@@ -118,23 +119,13 @@ public class GroupsScreen extends AppCompatActivity {
             public void onClick(View v)
             {
                 init(playerTableLayout);
-                //spinner = (Spinner) findViewById(R.id.groupsSpinner);
-                //String selectedGroup = String.valueOf(spinner.getSelectedItem());
-                /*myRef = database.getInstance().getReference().child("groups");
-                myRef.child("groupList").addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        GenericTypeIndicator<ArrayList<String>> t = new GenericTypeIndicator<ArrayList<String>>() {};
-                        //ArrayList<String> yourStringArray = dataSnapshot.getValue(t);
-                        groupList = dataSnapshot.getValue(t);
-                    }
+                spinner = (Spinner) findViewById(R.id.groupsSpinner);
+                String selectedGroup = String.valueOf(spinner.getSelectedItem());
+                if(selectedGroup.equals("Friday League"))
+                {
 
-                    @Override
-                    public void onCancelled(DatabaseError error) {
-                        // Failed to read value
-                        groupList.add("I messed up");
-                    }
-                });*/
+                }
+
             }
         });
         Button startGameButton = (Button)findViewById(R.id.startGameButton);
