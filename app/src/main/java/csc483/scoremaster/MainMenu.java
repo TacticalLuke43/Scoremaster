@@ -36,11 +36,11 @@ public class MainMenu extends AppCompatActivity {
         {
             public void onClick(View v)
             {
-                Intent i = new Intent(MainMenu.this, GameInProgressScreen.class);
+                /*Intent i = new Intent(MainMenu.this, GameInProgressScreen.class);
                 String strName = "gmVlFn";
                 i.putExtra("GiveRoomCode", strName);
-                startActivity(i);
-                //startActivity(new Intent(MainMenu.this, ViewGame.class));
+                startActivity(i);*/
+                startActivity(new Intent(MainMenu.this, ViewGame.class));
             }
         });
         groupManButton.setOnClickListener(new View.OnClickListener()
