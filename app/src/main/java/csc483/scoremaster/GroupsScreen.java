@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -14,6 +15,7 @@ import android.widget.CheckedTextView;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -100,6 +102,7 @@ public class GroupsScreen extends AppCompatActivity {
                 GenericTypeIndicator<ArrayList<String>> t = new GenericTypeIndicator<ArrayList<String>>() {};
                 //ArrayList<String> yourStringArray = dataSnapshot.getValue(t);
                 groupList = dataSnapshot.getValue(t);
+                addItemsOnSpinner();
             }
 
             @Override
@@ -109,15 +112,6 @@ public class GroupsScreen extends AppCompatActivity {
             }
         });
 
-
-        Button groupsBut = (Button)findViewById(R.id.updateGroupsButton);
-        groupsBut.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                addItemsOnSpinner();
-            }
-        });
         Button playersBut = (Button)findViewById(R.id.updatePlayerButton);
         playersBut.setOnClickListener(new View.OnClickListener()
         {
@@ -212,6 +206,7 @@ public class GroupsScreen extends AppCompatActivity {
         list.clear();
         myRef = database.getInstance().getReference().child("groups");
         spinner = (Spinner) findViewById(R.id.groupsSpinner);
+        list.add("Select a Group");
         for(int i = 0; i < groupList.size() ; i++)
         {
             //read the group names
@@ -230,12 +225,13 @@ public class GroupsScreen extends AppCompatActivity {
                 }
             });
 
-            //list.add(groupList.get(i));
+
         }
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
+        //spinner.setBackgroundColor(Color.BLACK);
     }
 
 //    public void addListenerOnSpinnerItemSelection() {
