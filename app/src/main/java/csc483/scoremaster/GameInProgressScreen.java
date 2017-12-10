@@ -83,7 +83,7 @@ public class GameInProgressScreen extends AppCompatActivity {
 
 
 
-
+        matchCodeText = (TextView)findViewById(R.id.matchCodeText);
         textView27 = (TextView)findViewById(R.id.textView27);
         textView38 = (TextView)findViewById(R.id.textView38);
         textView39 = (TextView)findViewById(R.id.textView39);
@@ -120,6 +120,7 @@ public class GameInProgressScreen extends AppCompatActivity {
         radioButton4 = (RadioButton)findViewById(R.id.radioButton2);
         radioButton5 = (RadioButton)findViewById(R.id.radioButton3);
         radioButton6 = (RadioButton)findViewById(R.id.radioButton4);
+        matchCodeText.setText(roomCode);
         myRef = database.getInstance().getReference().child("matches").child(roomCode);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override

@@ -8,31 +8,23 @@
     tools:context="csc483.scoremaster.StartingSplash">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="98dp"
-        android:text="Scoremaster"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:text="8 Ball" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="121dp"
-        android:text="Tap to start" />
+        android:layout_marginBottom="134dp"
+        android:fontFamily="@font/signpainter"
+        android:text="Tap to start"
+        android:textSize="30sp"
+        android:typeface="normal" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp"
+        app:srcCompat="@drawable/scoremaster_splash" />
 </RelativeLayout>
